@@ -1,0 +1,13 @@
+1. Wrote flume agent configuration and uploaded it and linux_messages_3000lines.txt file to /tmp folder of hdp sandbox filesystem
+
+2. Created empty output.txt file in the same folder
+
+3. Ran flume agent
+[root@sandbox-hdp ~]# flume-ng agent --conf-file /tmp/flume.conf --name a1
+
+4. Ran the following command to gradually fill output file
+[root@sandbox-hdp tmp]# cat linux_messages_3000lines.txt | while read line ; do echo "$line" ; sleep 0.2 ; done > output.txt
+
+5. Stopped flume agent after command from step 4 stopped running
+
+6. Printed output
